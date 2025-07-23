@@ -1,0 +1,25 @@
+7.	Write a program to demonstrate the use of arithmetic operators (+, -, *, /, %). Take two numbers as input and show the result of each operation.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input two numbers
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        // Arithmetic operations
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        System.out.println("Remainder: " + (a % b));
+
+        sc.close();
+    }
+}
