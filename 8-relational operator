@@ -1,0 +1,25 @@
+// 8.	Write a program to demonstrate the use of relational operators (==, !=, <, >, <=, >=). Compare two numbers and print the boolean result for each operator.
+import java.util.Scanner;
+
+public class RelationalOperatorsDemo {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Take two numbers as input
+        System.out.print("Enter first number: ");
+        int a = input.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = input.nextInt();
+
+        // Using relational operators and printing results
+        System.out.println("a == b : " + (a == b));
+        System.out.println("a != b : " + (a != b));
+        System.out.println("a < b  : " + (a < b));
+        System.out.println("a > b  : " + (a > b));
+        System.out.println("a <= b : " + (a <= b));
+        System.out.println("a >= b : " + (a >= b));
+
+        input.close();
+    }
+}
