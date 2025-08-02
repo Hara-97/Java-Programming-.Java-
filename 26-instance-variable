@@ -1,0 +1,32 @@
+// 26.	Design a Car class with make, model, and year as instance variables. Create an object of Car, set its attributes, and print them
+class Car {
+    // Instance variables
+    String make;
+    String model;
+    int year;
+
+    // Method to set the attributes
+    void setCarDetails(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Method to print the car details
+    void displayCarDetails() {
+        System.out.println("Car Make: " + make);
+        System.out.println("Car Model: " + model);
+        System.out.println("Car Year: " + year);
+    }
+
+    public static void main(String[] args) {
+        // Creating an object of Car
+        Car myCar = new Car();
+
+        // Setting attributes
+        myCar.setCarDetails("Toyota", "Camry", 2022);
+
+        // Printing attributes
+        myCar.displayCarDetails();
+    }
+}
