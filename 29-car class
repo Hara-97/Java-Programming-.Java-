@@ -1,0 +1,30 @@
+// 30.	Design a Person class with name and age. Create a Student class that inherits from Person and adds studentId and major. Demonstrate inheritance by creating Student objects. 
+// Person class
+class Person {
+    String name;
+    int age;
+}
+
+// Student class inherits Person
+class Student extends Person {
+    String studentId;
+    String major;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create Student object
+        Student s1 = new Student();
+        s1.name = "Alice";
+        s1.age = 20;
+        s1.studentId = "S123";
+        s1.major = "Computer Science";
+
+        // Display details
+        System.out.println("Name: " + s1.name);
+        System.out.println("Age: " + s1.age);
+        System.out.println("Student ID: " + s1.studentId);
+        System.out.println("Major: " + s1.major);
+    }
+}
+
