@@ -1,0 +1,41 @@
+// 28.	Add a method displayInfo() to the Car class (Q27) that prints all the car's details. Call this method from your main program.
+class Car {
+    String make;
+    String model;
+    int year;
+
+    // Default constructor
+    Car() {
+        make = "Unknown";
+        model = "Unknown";
+        year = 0;
+    }
+
+    // Parameterized constructor
+    Car(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Method to display car details
+    void displayInfo() {
+        System.out.println("Make: " + make);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Using default constructor
+        Car car1 = new Car();
+        System.out.println("Car 1 Details:");
+        car1.displayInfo();
+
+        // Using parameterized constructor
+        Car car2 = new Car("Toyota", "Fortuner", 2022);
+        System.out.println("\nCar 2 Details:");
+        car2.displayInfo();
+    }
+}
