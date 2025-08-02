@@ -1,0 +1,62 @@
+//29.	Implement encapsulation for the Car class (Q28) by making instance variables private and providing public getter and setter methods for them. 
+// Car.java
+class Car {
+    // Private instance variables (encapsulation)
+    private String make;
+    private String model;
+    private int year;
+
+    // Public setter methods
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    // Public getter methods
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    // Method to display car information
+    public void displayInfo() {
+        System.out.println("Make: " + make);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+
+        // Setting values using setters
+        myCar.setMake("Toyota");
+        myCar.setModel("Corolla");
+        myCar.setYear(2022);
+
+        // Getting values using getters
+        System.out.println("Car Make: " + myCar.getMake());
+        System.out.println("Car Model: " + myCar.getModel());
+        System.out.println("Car Year: " + myCar.getYear());
+
+        // Or display all using method
+        System.out.println("\n--- Car Details ---");
+        myCar.displayInfo();
+    }
+}
