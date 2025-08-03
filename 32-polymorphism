@@ -1,0 +1,49 @@
+// 32.	Demonstrate polymorphism by creating an array of Person references, where some refer to Person objects and others to Student objects. Call displayInfo() on each
+// Base class
+class Person {
+    String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+
+    void displayInfo() {
+        System.out.println("Person Name: " + name);
+    }
+}
+
+// Derived class
+class Student extends Person {
+    int studentId;
+
+    Student(String name, int studentId) {
+        super(name);
+        this.studentId = studentId;
+    }
+
+    // Overriding displayInfo
+    void displayInfo() {
+        System.out.println("Student Name: " + name + ", ID: " + studentId);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Array of Person references
+        Person[] people = new Person[4];
+
+        // Some Person objects
+        people[0] = new Person("Alice");
+        people[1] = new Person("Bob");
+
+        // Some Student objects
+        people[2] = new Student("Charlie", 101);
+        people[3] = new Student("Daisy", 102);
+
+        // Call displayInfo() on each (Polymorphism)
+        for (Person p : people) {
+            p.displayInfo();  // Calls correct method based on actual object
+        }
+    }
+}
