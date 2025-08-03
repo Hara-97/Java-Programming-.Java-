@@ -1,0 +1,47 @@
+// 31.	Override the displayInfo() method in the Student class (Q30) to include student-specific details along with person details
+// Parent class
+class Person {
+    String name;
+    int age;
+
+    // Constructor
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // displayInfo() method
+    void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+// Child class
+class Student extends Person {
+    String studentId;
+    String major;
+
+    // Constructor
+    Student(String name, int age, String studentId, String major) {
+        super(name, age);  // Call the parent constructor
+        this.studentId = studentId;
+        this.major = major;
+    }
+
+    // Overriding displayInfo() method
+    @Override
+    void displayInfo() {
+        super.displayInfo();  // Call parent class method
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Major: " + major);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student("Hara", 19, "CSE123", "Computer Science");
+        s.displayInfo();  // Calls overridden method
+    }
+}
