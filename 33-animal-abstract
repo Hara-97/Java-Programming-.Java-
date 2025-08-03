@@ -1,0 +1,26 @@
+// 33.	Design an Animal abstract class with an abstract method makeSound(). Create concrete Dog and Cat classes that extend Animal and implement makeSound(). Demonstrate polymorphism. 
+abstract class Animal {
+    abstract void makeSound(); // Abstract method
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Meow!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a1 = new Dog(); // Polymorphism
+        Animal a2 = new Cat(); // Polymorphism
+
+        a1.makeSound(); // Woof!
+        a2.makeSound(); // Meow!
+    }
+}
