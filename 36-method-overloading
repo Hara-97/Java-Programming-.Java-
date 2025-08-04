@@ -1,0 +1,26 @@
+// 36.	Discuss method overloading. Write a class with overloaded methods (e.g., add(int a, int b) and add(double a, double b))
+// Method Overloading means having multiple methods in the same class with the same name but different parameters (type or number of arguments). It helps improve code readability and allows performing similar operations with different types or counts of inputs.
+public class Calculator {
+
+    // Method 1: Adding two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method 2: Adding two doubles
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        // Calling add with int arguments
+        int intResult = calc.add(10, 20);
+        System.out.println("Sum of integers: " + intResult);
+
+        // Calling add with double arguments
+        double doubleResult = calc.add(5.5, 3.2);
+        System.out.println("Sum of doubles: " + doubleResult);
+    }
+}
