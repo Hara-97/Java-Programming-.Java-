@@ -1,0 +1,32 @@
+// 39.	Write a program to demonstrate the use of the super keyword to call a superclass constructor and a superclass method
+// Superclass
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor called");
+    }
+
+    void displayInfo() {
+        System.out.println("This is an animal");
+    }
+}
+
+// Subclass
+class Dog extends Animal {
+    Dog() {
+        super(); // Calling superclass constructor
+        System.out.println("Dog constructor called");
+    }
+
+    void showDetails() {
+        super.displayInfo(); // Calling superclass method
+        System.out.println("This is a dog");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();      // Creates Dog object and calls constructors
+        d.showDetails();        // Calls method that uses super to call parent method
+    }
+}
