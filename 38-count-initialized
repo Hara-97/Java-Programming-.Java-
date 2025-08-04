@@ -1,0 +1,24 @@
+// 38.	Create a class Counter with a static variable count initialized to 0. Increment count in the constructor. Demonstrate that count keeps track of the number of objects created
+public class Counter {
+    static int count = 0;  // static variable shared by all objects
+
+    // Constructor
+    Counter() {
+        count++;  // increment count when object is created
+        System.out.println("Object created. Current count: " + count);
+    }
+
+    // Method to display total objects created
+    static void showCount() {
+        System.out.println("Total objects created: " + count);
+    }
+
+    public static void main(String[] args) {
+        Counter c1 = new Counter();  // count = 1
+        Counter c2 = new Counter();  // count = 2
+        Counter c3 = new Counter();  // count = 3
+
+        // Display total count
+        Counter.showCount();         // prints 3
+    }
+}
