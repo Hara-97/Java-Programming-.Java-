@@ -1,0 +1,35 @@
+// 37.	Discuss method overriding. Provide an example where a subclass overrides a method from its superclass
+Method Overriding in Java occurs when a subclass provides a specific implementation of a method that is already defined in its superclass.
+The method in the subclass must have:
+
+The same name
+
+The same return type
+
+The same parameters
+
+// Superclass
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Subclass
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal();
+        myAnimal.makeSound();  // Output: Animal makes a sound
+
+        Animal myDog = new Dog();
+        myDog.makeSound();     // Output: Dog barks (method overridden)
+    }
+}
