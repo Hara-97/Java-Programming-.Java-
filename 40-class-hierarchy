@@ -1,0 +1,37 @@
+// 40.	Implement a class hierarchy: Vehicle -> TwoWheeler -> Motorcycle. Add appropriate methods and fields to each, demonstrating inheritance
+// Base class
+class Vehicle {
+    String brand;
+
+    void start() {
+        System.out.println("Vehicle is starting...");
+    }
+}
+
+// Subclass of Vehicle
+class TwoWheeler extends Vehicle {
+    void balance() {
+        System.out.println("Two-wheeler is balancing...");
+    }
+}
+
+// Subclass of TwoWheeler
+class Motorcycle extends TwoWheeler {
+    void ride() {
+        System.out.println("Riding the motorcycle...");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Motorcycle bike = new Motorcycle();
+        bike.brand = "Honda";
+
+        bike.start();       // from Vehicle
+        bike.balance();     // from TwoWheeler
+        bike.ride();        // from Motorcycle
+
+        System.out.println("Brand: " + bike.brand);
+    }
+}
