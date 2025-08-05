@@ -1,0 +1,51 @@
+// 42.	Create an interface Comparable with a method compareTo(Object o). Implement this interface in a Product class to enable sorting products based on their price
+// Create Comparable interface
+interface Comparable {
+    int compareTo(Object o);
+}
+
+// Product class
+class Product implements Comparable {
+    String name;
+    double price;
+
+    // Constructor
+    Product(String n, double p) {
+        name = n;
+        price = p;
+    }
+
+    // Compare products by price
+    public int compareTo(Object o) {
+        Product p = (Product) o;
+        return (int)(this.price - p.price);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create products
+        Product p1 = new Product("Pen", 10);
+        Product p2 = new Product("Book", 50);
+        Product p3 = new Product("Bag", 30);
+
+        // Store in array
+        Product[] items = {p1, p2, p3};
+
+        // Sort using compareTo
+        for (int i = 0; i < items.length - 1; i++) {
+            for (int j = i + 1; j < items.length; j++) {
+                if (items[i].compareTo(items[j]) > 0) {
+                    Product temp = items[i];
+                    items[i] = items[j];
+                    items[j] = temp;
+                }
+            }
+        }
+
+        // Print sorted products
+        for (Product p : items) {
+            System.out.println(p.name + " - " + p.price);
+        }
+    }
+}
