@@ -1,0 +1,56 @@
+// 41.	Design an abstract class Employee with name, id, and an abstract method calculateSalary(). Create FullTimeEmployee and PartTimeEmployee subclasses, each with their own salary calculation logic
+// Abstract class
+abstract class Employee {
+    String name;
+    int id;
+
+    // Constructor
+    Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    // Abstract method
+    abstract double calculateSalary();
+}
+
+// Full-time employee class
+class FullTimeEmployee extends Employee {
+    double salary;
+
+    FullTimeEmployee(String name, int id, double salary) {
+        super(name, id);
+        this.salary = salary;
+    }
+
+    double calculateSalary() {
+        return salary;
+    }
+}
+
+// Part-time employee class
+class PartTimeEmployee extends Employee {
+    int hours;
+    double rate;
+
+    PartTimeEmployee(String name, int id, int hours, double rate) {
+        super(name, id);
+        this.hours = hours;
+        this.rate = rate;
+    }
+
+    double calculateSalary() {
+        return hours * rate;
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        FullTimeEmployee fte = new FullTimeEmployee("Alice", 1, 30000);
+        PartTimeEmployee pte = new PartTimeEmployee("Bob", 2, 50, 200);
+
+        System.out.println("Full Time Employee Salary: ₹" + fte.calculateSalary());
+        System.out.println("Part Time Employee Salary: ₹" + pte.calculateSalary());
+    }
+}
