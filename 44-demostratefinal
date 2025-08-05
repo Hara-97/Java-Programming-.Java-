@@ -1,0 +1,40 @@
+// 44.	Write a program to demonstrate final keywords with variables, methods, and classes. Explain their purpose
+| **Final Keyword** | **Purpose**                                                            |
+| ----------------- | ---------------------------------------------------------------------- |
+| `final variable`  | Its value cannot be changed once assigned (acts like a constant).      |
+| `final method`    | It cannot be overridden by any subclass (ensures consistent behavior). |
+| `final class`     | It cannot be inherited (no subclass can be created from it).           |
+
+// Final class - cannot be extended
+final class Vehicle {
+    // Final variable - value cannot be changed
+    final int wheels = 4;
+
+    // Final method - cannot be overridden
+    final void displayType() {
+        System.out.println("This is a vehicle.");
+    }
+}
+
+// Try to extend final class (this will give error if uncommented)
+// class Car extends Vehicle {}  // ❌ Not allowed
+
+class Bike {
+    final int speedLimit = 80;  // Final variable
+
+    final void showSpeed() {    // Final method
+        System.out.println("Speed Limit is: " + speedLimit + " km/h");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v = new Vehicle();
+        v.displayType();
+        // v.wheels = 6;  // ❌ Not allowed, final variable
+
+        Bike b = new Bike();
+        b.showSpeed();
+        // b.speedLimit = 100;  // ❌ Not allowed, final variable
+    }
+}
