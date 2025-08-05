@@ -1,0 +1,8 @@
+// 43.	Discuss the difference between interface and abstract class in terms of multiple inheritance, fields, and constructors
+| Feature                  | Interface                                                                                        | Abstract Class                                                                         |
+| ------------------------ | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| **Multiple Inheritance** | Supports multiple inheritance (a class can implement multiple interfaces)                        | Does **not** support multiple inheritance (a class can extend only one abstract class) |
+| **Fields (Variables)**   | Only **public**, **static**, and **final** constants allowed (i.e., variables must be constants) | Can have **instance variables** (non-final, non-static) like in a regular class        |
+| **Constructors**         | Cannot have constructors                                                                         | Can have constructors, used to initialize fields                                       |
+| **Usage**                | Used to define a contract or capability (like a blueprint)                                       | Used for partial implementation with some defined methods and some abstract methods    |
+| **Inheritance Keyword**  | Implement using `implements`                                                                     | Inherit using `extends`                                                                |
