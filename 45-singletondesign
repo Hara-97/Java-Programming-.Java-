@@ -1,42 +1,32 @@
 // 45.	Implement a singleton design pattern for a Logger class, ensuring only one instance of the class can be created
 class Logger {
-    // Static instance of Logger
-    private static Logger instance = null;
+    // Only one instance (static)
+    private static Logger instance = new Logger();
 
-    // Private constructor to prevent object creation from outside
+    // Private constructor
     private Logger() {
-        System.out.println("Logger created");
+        System.out.println("Logger created.");
     }
 
-    // Public method to get the single instance
+    // Public method to get the instance
     public static Logger getInstance() {
-        if (instance == null) {
-            instance = new Logger();
-        }
         return instance;
     }
 
-    // Method to log messages
-    public void log(String msg) {
-        System.out.println("Log: " + msg);
+    // Simple log method
+    public void log(String message) {
+        System.out.println("Log: " + message);
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        // Get Logger instance
         Logger logger1 = Logger.getInstance();
-        logger1.log("Hello from logger1");
+        logger1.log("Hello from logger 1");
 
-        // Get Logger instance again
         Logger logger2 = Logger.getInstance();
-        logger2.log("Hello from logger2");
+        logger2.log("Hello from logger 2");
 
-        // Check if both are the same
-        if (logger1 == logger2) {
-            System.out.println("Same instance");
-        } else {
-            System.out.println("Different instances");
-        }
+        System.out.println(logger1 == logger2); // true
     }
 }
