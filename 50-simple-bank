@@ -1,0 +1,51 @@
+// 50.	Design a simple Bank class with methods deposit and withdraw that modify an account balance. Handle invalid operations (e.g., withdrawing more than balance).
+class Bank {
+    int balance;
+
+    // Constructor to set initial balance
+    Bank(int amount) {
+        balance = amount;
+    }
+
+    // Method to deposit money
+    void deposit(int amount) {
+        if (amount > 0) {
+            balance = balance + amount;
+            System.out.println("Deposited: ₹" + amount);
+        } else {
+            System.out.println("Invalid deposit amount");
+        }
+    }
+
+    // Method to withdraw money
+    void withdraw(int amount) {
+        if (amount > 0) {
+            if (amount <= balance) {
+                balance = balance - amount;
+                System.out.println("Withdrawn: ₹" + amount);
+            } else {
+                System.out.println("Not enough balance");
+            }
+        } else {
+            System.out.println("Invalid withdraw amount");
+        }
+    }
+
+    // Method to show current balance
+    void showBalance() {
+        System.out.println("Current Balance: ₹" + balance);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bank account = new Bank(1000);  // Starting balance ₹1000
+
+        account.showBalance();
+        account.deposit(500);
+        account.withdraw(300);
+        account.withdraw(1500); // Invalid
+        account.deposit(-200);  // Invalid
+        account.showBalance();
+    }
+}
