@@ -1,0 +1,39 @@
+// 49.	Demonstrate static polymorphism (method overloading) and dynamic polymorphism (method overriding) in a single program with clear examples
+// Parent class
+class Animal {
+    // Method Overloading (Static Polymorphism)
+    void eat() {
+        System.out.println("Animal eats food");
+    }
+
+    void eat(String food) {
+        System.out.println("Animal eats " + food);
+    }
+
+    // Method Overriding (Dynamic Polymorphism)
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+// Child class
+class Dog extends Animal {
+    // Overriding sound() method
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Method Overloading (static polymorphism)
+        Animal a = new Animal();
+        a.eat();               // Output: Animal eats food
+        a.eat("grass");        // Output: Animal eats grass
+
+        // Method Overriding (dynamic polymorphism)
+        Animal d = new Dog();  // Parent class reference, Child class object
+        d.sound();             // Output: Dog barks
+    }
+}
