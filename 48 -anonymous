@@ -1,0 +1,21 @@
+// 48.	Write a program that uses an anonymous inner class to implement an interface
+// Define an interface
+interface Greeting {
+    void sayHello();
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Anonymous inner class implementing Greeting interface
+        Greeting greet = new Greeting() {
+            @Override
+            public void sayHello() {
+                System.out.println("Hello from anonymous inner class!");
+            }
+        };
+
+        // Call the method
+        greet.sayHello();
+    }
+}
