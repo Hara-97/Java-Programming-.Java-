@@ -1,0 +1,53 @@
+// 47.	Create a Manager class that extends Employee (from Q41). Add a bonus field and override calculateSalary() to include the bonus
+// Employee class (Base class)
+class Employee {
+    String name;
+    double salary;
+
+    // Constructor
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Method to calculate salary
+    public double calculateSalary() {
+        return salary;
+    }
+}
+
+// Manager class (Subclass of Employee)
+class Manager extends Employee {
+    double bonus;
+
+    // Constructor
+    public Manager(String name, double salary, double bonus) {
+        super(name, salary);  // Calling superclass constructor
+        this.bonus = bonus;
+    }
+
+    // Overriding calculateSalary() to include bonus
+    @Override
+    public double calculateSalary() {
+        return salary + bonus;
+    }
+
+    // Method to display manager details
+    public void displayDetails() {
+        System.out.println("Manager Name: " + name);
+        System.out.println("Base Salary: " + salary);
+        System.out.println("Bonus: " + bonus);
+        System.out.println("Total Salary: " + calculateSalary());
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Create Manager object
+        Manager manager = new Manager("John Doe", 50000, 10000);
+
+        // Display manager details
+        manager.displayDetails();
+    }
+}
