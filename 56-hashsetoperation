@@ -1,0 +1,29 @@
+// 56.	Write a program to demonstrate common HashSet operations: add, remove, contains, size
+import java.util.HashSet;
+
+public class HashSetDemo {
+    public static void main(String[] args) {
+        // Create a HashSet of integers
+        HashSet<Integer> set = new HashSet<>();
+
+        // Add elements
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        set.add(40);
+        System.out.println("HashSet after adding elements: " + set);
+
+        // Remove an element
+        set.remove(20);
+        System.out.println("HashSet after removing 20: " + set);
+
+        // Check if an element exists
+        boolean contains30 = set.contains(30);
+        System.out.println("Does HashSet contain 30? " + contains30);
+
+        // Get size of HashSet
+        int size = set.size();
+        System.out.println("Size of HashSet: " + size);
+    }
+}
+
