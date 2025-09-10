@@ -1,0 +1,72 @@
+// 57.	Compare and contrast HashSet and LinkedHashSet and TreeSet. Demonstrate their behavior with a few elements. 
+Difference Between HashSet, LinkedHashSet, and TreeSet
+
+1.HashSet
+
+Stores elements in unordered manner.
+
+Backed by a HashMap.
+
+Does not allow duplicates.
+
+Allows one null.
+
+Fastest in performance (O(1) for add/remove/contains).
+
+2.LinkedHashSet
+
+Stores elements in insertion order.
+
+Backed by a LinkedHashMap.
+
+Does not allow duplicates.
+
+Allows one null.
+
+Slightly slower than HashSet.
+
+3.TreeSet
+
+Stores elements in sorted order (ascending by default).
+
+Backed by a TreeMap (Red-Black tree).
+
+Does not allow duplicates.
+
+Does not allow null (throws NullPointerException).
+
+Slower (O(log n) operations).
+
+
+//  CODE :  //
+import java.util.*;
+
+public class SetComparison {
+    public static void main(String[] args) {
+        // HashSet Example
+        Set<String> hashSet = new HashSet<>();
+        hashSet.add("Banana");
+        hashSet.add("Apple");
+        hashSet.add("Orange");
+        hashSet.add("Apple"); // Duplicate ignored
+
+        // LinkedHashSet Example
+        Set<String> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add("Banana");
+        linkedHashSet.add("Apple");
+        linkedHashSet.add("Orange");
+        linkedHashSet.add("Apple"); // Duplicate ignored
+
+        // TreeSet Example
+        Set<String> treeSet = new TreeSet<>();
+        treeSet.add("Banana");
+        treeSet.add("Apple");
+        treeSet.add("Orange");
+        treeSet.add("Apple"); // Duplicate ignored
+
+        // Printing all sets
+        System.out.println("HashSet (Unordered): " + hashSet);
+        System.out.println("LinkedHashSet (Insertion Order): " + linkedHashSet);
+        System.out.println("TreeSet (Sorted Order): " + treeSet);
+    }
+}
