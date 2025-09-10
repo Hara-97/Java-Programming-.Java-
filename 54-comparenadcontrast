@@ -1,0 +1,44 @@
+// 54.	Compare and contrast ArrayList and LinkedList in terms of internal implementation, performance for random access vs. insertions/deletions, and memory usage. (Conceptual, in comments).
+/*
+    ==========================
+      ArrayList vs LinkedList
+    ==========================
+
+1. Internal Implementation:
+   - ArrayList: 
+       -> Uses a dynamic array to store elements.
+       -> Elements are stored in contiguous memory locations.
+   - LinkedList:
+       -> Uses a doubly linked list internally.
+       -> Each element (Node) contains data and pointers to previous and next nodes.
+
+2. Random Access (get/set operations):
+   - ArrayList: 
+       -> Provides O(1) time complexity for random access using index (because of direct indexing).
+   - LinkedList:
+       -> Provides O(n) time complexity for random access, as traversal from the head or tail is required.
+
+3. Insertions/Deletions:
+   - ArrayList:
+       -> Insertion/Deletion at the end is O(1) (amortized).
+       -> Insertion/Deletion in the middle or beginning is O(n), since shifting of elements is required.
+   - LinkedList:
+       -> Insertion/Deletion at the beginning, middle, or end is O(1), if the node reference is known.
+       -> However, finding the node first takes O(n).
+
+4. Memory Usage:
+   - ArrayList:
+       -> Requires less memory overhead since it stores only object references in a contiguous array.
+   - LinkedList:
+       -> Requires more memory overhead per element because each node stores data + two references (previous and next).
+
+5. Use Cases:
+   - ArrayList:
+       -> Best for scenarios requiring fast random access and fewer insertions/deletions in the middle.
+   - LinkedList:
+       -> Best for scenarios with frequent insertions/deletions, especially in the middle of the list.
+
+Summary:
+   - ArrayList = Faster random access, less memory, but slower insertions/deletions in middle.
+   - LinkedList = Slower random access, more memory, but faster insertions/deletions (if node is known).
+*/
