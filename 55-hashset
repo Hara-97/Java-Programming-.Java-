@@ -1,0 +1,20 @@
+// 55.	Write a program to create a HashSet of integers, add duplicate elements, and observe that duplicates are not stored. Print the set
+import java.util.HashSet;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        // Create a HashSet of integers
+        HashSet<Integer> numbers = new HashSet<>();
+
+        // Add elements to the HashSet
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(20); // duplicate
+        numbers.add(10); // duplicate
+        numbers.add(40);
+
+        // Print the HashSet
+        System.out.println("HashSet elements: " + numbers);
+    }
+}
