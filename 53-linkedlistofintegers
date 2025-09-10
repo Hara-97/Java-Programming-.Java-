@@ -1,0 +1,33 @@
+// 53.	Write a program to create a LinkedList of integers, add elements, and demonstrate addFirst(), addLast(), removeFirst(), removeLast() operations
+import java.util.LinkedList;
+
+public class LinkedListDemo {
+    public static void main(String[] args) {
+        // Create a LinkedList of Integers
+        LinkedList<Integer> numbers = new LinkedList<>();
+
+        // Add elements
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+
+        System.out.println("Initial LinkedList: " + numbers);
+
+        // Add element at the beginning
+        numbers.addFirst(5);
+        System.out.println("After addFirst(5): " + numbers);
+
+        // Add element at the end
+        numbers.addLast(50);
+        System.out.println("After addLast(50): " + numbers);
+
+        // Remove element from the beginning
+        numbers.removeFirst();
+        System.out.println("After removeFirst(): " + numbers);
+
+        // Remove element from the end
+        numbers.removeLast();
+        System.out.println("After removeLast(): " + numbers);
+    }
+}
