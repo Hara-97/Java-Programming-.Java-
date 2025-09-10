@@ -1,0 +1,32 @@
+// 52.	Write a program to demonstrate common ArrayList operations: add, remove, get, size, contains, indexOf
+import java.util.ArrayList;
+
+public class SimpleArrayList {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+
+        // add elements
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Mango");
+
+        // print list
+        System.out.println("List: " + list);
+
+        // get element
+        System.out.println("Element at index 1: " + list.get(1));
+
+        // contains check
+        System.out.println("Contains Mango? " + list.contains("Mango"));
+
+        // indexOf
+        System.out.println("Index of Banana: " + list.indexOf("Banana"));
+
+        // remove element
+        list.remove("Apple");
+        System.out.println("After removing Apple: " + list);
+
+        // size
+        System.out.println("Size: " + list.size());
+    }
+}
