@@ -1,0 +1,52 @@
+// 63.	Write a program to sort an ArrayList of custom Product objects (with name, price) by price using a Comparator interface
+import java.util.*;
+
+// Product class with name and price
+class Product {
+    String name;
+    double price;
+
+    // Constructor
+    Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    // Display product details
+    public String toString() {
+        return name + " - Rs." + price;
+    }
+}
+
+// Comparator for sorting by price
+class PriceComparator implements Comparator<Product> {
+    public int compare(Product p1, Product p2) {
+        // Ascending order by price
+        return Double.compare(p1.price, p2.price);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Product> list = new ArrayList<>();
+
+        // Adding products
+        list.add(new Product("Laptop", 55000));
+        list.add(new Product("Phone", 25000));
+        list.add(new Product("Tablet", 15000));
+        list.add(new Product("Smartwatch", 8000));
+
+        System.out.println("Before Sorting:");
+        for (Product p : list) {
+            System.out.println(p);
+        }
+
+        // Sorting by price using Comparator
+        Collections.sort(list, new PriceComparator());
+
+        System.out.println("\nAfter Sorting by Price (Ascending):");
+        for (Product p : list) {
+            System.out.println(p);
+        }
+    }
+}
