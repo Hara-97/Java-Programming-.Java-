@@ -1,0 +1,26 @@
+// 59.	Write a program to demonstrate common HashMap operations: put, get, containsKey, remove, size
+import java.util.HashMap;
+
+public class SimpleHashMap {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+
+        // put()
+        map.put("A", 10);
+        map.put("B", 20);
+        map.put("C", 30);
+
+        // get()
+        System.out.println("Value for B: " + map.get("B"));
+
+        // containsKey()
+        System.out.println("Contains A? " + map.containsKey("A"));
+
+        // remove()
+        map.remove("C");
+        System.out.println("After removing C: " + map);
+
+        // size()
+        System.out.println("Size: " + map.size());
+    }
+}
