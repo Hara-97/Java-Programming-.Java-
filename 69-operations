@@ -1,0 +1,28 @@
+// 69.	Write a program to implement a simple Stack using java.util.Stack and demonstrate its push, pop, peek, isEmpty operations
+import java.util.Stack;
+
+public class StackDemo {
+    public static void main(String[] args) {
+        // Create a Stack of integers
+        Stack<Integer> stack = new Stack<>();
+
+        // Check if stack is empty
+        System.out.println("Is stack empty? " + stack.isEmpty());
+
+        // Push elements into stack
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        System.out.println("Stack after pushes: " + stack);
+
+        // Peek (see top element without removing)
+        System.out.println("Top element (peek): " + stack.peek());
+
+        // Pop elements (removes top element)
+        System.out.println("Popped element: " + stack.pop());
+        System.out.println("Stack after pop: " + stack);
+
+        // Check again if empty
+        System.out.println("Is stack empty? " + stack.isEmpty());
+    }
+}
