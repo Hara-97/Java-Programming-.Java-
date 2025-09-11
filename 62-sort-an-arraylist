@@ -1,0 +1,38 @@
+// 62.	Write a program to sort an ArrayList of custom Student objects (with name, rollNo) by rollNo using the Comparable interface
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Student implements Comparable<Student> {
+    String name;
+    int rollNo;
+
+    Student(String name, int rollNo) {
+        this.name = name;
+        this.rollNo = rollNo;
+    }
+
+    // Sort by rollNo
+    public int compareTo(Student s) {
+        return this.rollNo - s.rollNo;
+    }
+
+    public String toString() {
+        return name + " - " + rollNo;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Student> list = new ArrayList<>();
+        list.add(new Student("Amit", 5));
+        list.add(new Student("Sneha", 2));
+        list.add(new Student("Raj", 8));
+        list.add(new Student("Priya", 1));
+
+        System.out.println("Before Sorting: " + list);
+
+        Collections.sort(list); // sorts by rollNo
+
+        System.out.println("After Sorting: " + list);
+    }
+}
