@@ -1,0 +1,30 @@
+// 58.	Write a program to create a HashMap where keys are String (e.g., student names) and values are Integer (e.g., scores). Add a few entries, retrieve a value by key, and iterate through all key-value pairs
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Create a HashMap where keys are String (student names) and values are Integer (scores)
+        HashMap<String, Integer> studentScores = new HashMap<>();
+
+        // Add entries
+        studentScores.put("Alice", 85);
+        studentScores.put("Bob", 92);
+        studentScores.put("Charlie", 78);
+        studentScores.put("David", 90);
+
+        // Retrieve a value by key
+        String searchKey = "Bob";
+        if (studentScores.containsKey(searchKey)) {
+            System.out.println(searchKey + "'s score: " + studentScores.get(searchKey));
+        } else {
+            System.out.println(searchKey + " not found in the records.");
+        }
+
+        // Iterate through all key-value pairs
+        System.out.println("\nAll student scores:");
+        for (Map.Entry<String, Integer> entry : studentScores.entrySet()) {
+            System.out.println("Student: " + entry.getKey() + " | Score: " + entry.getValue());
+        }
+    }
+}
