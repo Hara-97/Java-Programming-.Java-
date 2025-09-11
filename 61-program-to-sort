@@ -1,0 +1,25 @@
+// 61.	Write a program to sort an ArrayList of integers in ascending and descending order using Collections.sort()
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class SortArrayListExample {
+    public static void main(String[] args) {
+        // Create an ArrayList of integers
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(45);
+        numbers.add(12);
+        numbers.add(67);
+        numbers.add(23);
+        numbers.add(89);
+
+        System.out.println("Original List: " + numbers);
+
+        // Sort in ascending order
+        Collections.sort(numbers);
+        System.out.println("Ascending Order: " + numbers);
+
+        // Sort in descending order
+        Collections.sort(numbers, Collections.reverseOrder());
+        System.out.println("Descending Order: " + numbers);
+    }
+}
