@@ -1,0 +1,32 @@
+// 64.	Write a program to search for an element in an ArrayList using Collections.binarySearch() (ensure the list is sorted first)
+import java.util.*;
+
+public class BinarySearchExample {
+    public static void main(String[] args) {
+        // Create an ArrayList
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(50);
+        numbers.add(10);
+        numbers.add(30);
+        numbers.add(70);
+        numbers.add(20);
+
+        // Sort the list before using binarySearch
+        Collections.sort(numbers);
+
+        System.out.println("Sorted List: " + numbers);
+
+        // Element to search
+        int key = 30;
+
+        // Perform binary search
+        int index = Collections.binarySearch(numbers, key);
+
+        if (index >= 0) {
+            System.out.println("Element " + key + " found at index: " + index);
+        } else {
+            System.out.println("Element " + key + " not found.");
+        }
+    }
+}
+
