@@ -1,0 +1,27 @@
+// 60.	Compare and contrast HashMap, LinkedHashMap, and TreeMap. Demonstrate their behavior with a few entries
+import java.util.*;
+
+public class MapDemo {
+    public static void main(String[] args) {
+        // HashMap (no order)
+        Map<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("Banana", 2);
+        hashMap.put("Apple", 5);
+        hashMap.put("Orange", 3);
+        System.out.println("HashMap: " + hashMap);
+
+        // LinkedHashMap (insertion order)
+        Map<String, Integer> linkedHashMap = new LinkedHashMap<>();
+        linkedHashMap.put("Banana", 2);
+        linkedHashMap.put("Apple", 5);
+        linkedHashMap.put("Orange", 3);
+        System.out.println("LinkedHashMap: " + linkedHashMap);
+
+        // TreeMap (sorted by keys)
+        Map<String, Integer> treeMap = new TreeMap<>();
+        treeMap.put("Banana", 2);
+        treeMap.put("Apple", 5);
+        treeMap.put("Orange", 3);
+        System.out.println("TreeMap: " + treeMap);
+    }
+}
