@@ -1,0 +1,30 @@
+// 67.	Write a program to remove all occurrences of a specific element from an ArrayList
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class RemoveOccurrences {
+    public static void main(String[] args) {
+        // Create an ArrayList
+        ArrayList<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("banana");
+        list.add("apple");
+        list.add("orange");
+        list.add("apple");
+        list.add("grape");
+
+        System.out.println("Original List: " + list);
+
+        // Take input from user for element to remove
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter element to remove: ");
+        String element = sc.nextLine();
+
+        // Remove all occurrences
+        list.removeIf(e -> e.equals(element));
+
+        System.out.println("Updated List after removing \"" + element + "\": " + list);
+
+        sc.close();
+    }
+}
