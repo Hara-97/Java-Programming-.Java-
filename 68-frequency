@@ -1,0 +1,30 @@
+// 68.	Write a program to find the frequency of each word in a given text using a HashMap
+import java.util.*;
+
+public class WordFrequencySimple {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter a text:");
+        String text = sc.nextLine();
+        
+        String[] words = text.split(" ");
+        
+        HashMap<String, Integer> map = new HashMap<>();
+        
+        for (String word : words) {
+            if (map.containsKey(word)) {
+                map.put(word, map.get(word) + 1);
+            } else {
+                map.put(word, 1);
+            }
+        }
+        
+        System.out.println("Word Frequencies:");
+        for (String w : map.keySet()) {
+            System.out.println(w + " : " + map.get(w));
+        }
+        
+        sc.close();
+    }
+}
