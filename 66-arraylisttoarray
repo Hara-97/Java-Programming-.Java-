@@ -1,0 +1,26 @@
+// 66.	Write a program to convert an ArrayList to an array and vice-versa
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class ArrayListArrayConversion {
+    public static void main(String[] args) {
+        // -------- ArrayList to Array --------
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+
+        // Convert ArrayList to Array
+        String[] array = list.toArray(new String[0]);
+
+        System.out.println("Array (from ArrayList): " + Arrays.toString(array));
+
+        // -------- Array to ArrayList --------
+        String[] fruits = {"Mango", "Orange", "Grapes"};
+
+        // Convert Array to ArrayList
+        ArrayList<String> newList = new ArrayList<>(Arrays.asList(fruits));
+
+        System.out.println("ArrayList (from Array): " + newList);
+    }
+}
